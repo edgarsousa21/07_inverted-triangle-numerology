@@ -1,0 +1,208 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    width: 100vw;
+    height: 150vh;
+    border: 1px solid red;
+    background-color: #52bc53;
+}
+
+#container-master{
+    border: 1px solid greenyellow;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+
+}
+
+#container-top{
+    border: 1px solid black;
+    background-color: #4c1650;
+    width: 100%;
+    height: 80px;
+}
+
+#container-medium{
+    border: 1px solid black;
+    background-color: white;
+    width: 100%;
+    height: 550px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+h1{
+    font-size: 48px;
+    text-align: center;    
+}
+
+h2{
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 13px 0 13px 0;
+}
+
+h3{
+    font-size: 20px;
+    text-align: center;
+    margin: 13px 0 13px 0;
+}
+
+#container-back{
+    border: 1px solid black;
+    background-color: #52bc53;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+}
+
+#container-label{
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    
+
+}
+
+#name-person{
+    width: 300px;
+    background: #FFFFFF;
+    border: 1px solid #BBBBBB;
+    border-radius: 4px;
+    height: 48px;      
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+    font-size: 16px;    
+    
+
+}
+
+#label-name{
+    margin-top: 30px;
+    
+}
+
+#label-date{
+    margin-top: 30px;
+}
+
+#birthdate{
+    width: 300px;
+    background: #FFFFFF;
+    border: 1px solid #BBBBBB;
+    border-radius: 4px;
+    height: 48px;          
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+    font-size: 16px;   
+    
+
+}
+
+button{
+    width: 300px;
+    height: 50px;
+    border: none;
+    background-color: #52bc53;    
+    cursor: pointer;
+    margin-top: 40px;
+    color:#FFFFFF;
+    font-weight: bold;
+}
+
+button:hover {
+    opacity: 0.7;
+
+}
+
+button:active {
+    opacity: 0.5;
+}
+ 
+b{
+    color: #fbce07;
+}
+
+p{
+    font-size: 18px;
+    width: 800px;
+    margin-top: 10px;
+    text-align: left;
+    
+}
+
+
+                         /* RESPONSIVIDADE */
+
+@media screen and (max-width: 700px) {
+    #container-top{   
+        height: 40px;        
+               
+    }
+    
+    
+    h1{
+        font-size: 24px;
+        text-align: center;
+    }
+
+    h3{
+        font-size: 16px;
+        text-align: center;
+        margin: 13px 0 13px 0;
+    }
+
+    #container-label{
+        padding: 10px 14px;
+    }
+
+    #name-person{
+        width: 95%;
+    }
+
+    #birthdate{
+        width: 95%;
+    }
+
+    #label-name{
+        margin-top: 30px;
+        width: 100%;
+        
+    }
+
+    #label-date{
+        margin-top: 30px;
+        width: 100%;
+        
+    }
+
+    button{        
+        margin-top: 50px;
+        
+    }
+
+    p{
+        font-size: 14px;
+        width: 400px;
+        margin-top: 10px;
+        text-align: left;
+        
+    }
+
+
+}
