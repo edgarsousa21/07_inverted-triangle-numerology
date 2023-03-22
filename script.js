@@ -16,7 +16,7 @@
 */
 
 // button.addEventListener('click', getValues);
-
+// const tablechar = [b, c, ç, d, f, g, h, j ]
 const tabelaNumerologia = {
     "b": 2,
     "c": 3,
@@ -69,6 +69,11 @@ const tabelaNumerologia = {
     "y": 1
 };
 
+const tableNumerologyLetter = ["a", "á", "â", "ã", "à", "ä", "b", "c", "ç", "d", "e", "é", "ê", "è", "ë", "f", "g", "h", "i", "í", "ì", "î", "ï", "j", "k", "l", "m", "n", "ñ", "o", "ó", "ô", "õ", "ò", "ö", "p", "q", "r", "s", "t", "u", "ú", "ü", "ù", "v", "w", "x", "y", "z"]
+const tableNumerologyNumber = [1, 3, 8, 4, 2, 2, 2, 3, 6, 4, 5, 7, 3, 1, 1, 8, 3, 5, 1, 3, 2, 8, 2, 1, 2, 3, 4, 5, 8, 7, 9, 5, 1, 5, 5, 8, 1, 2, 3, 4, 6, 8, 3, 3, 6, 6, 6, 1, 7]
+// =======================================================================================================//
+
+
 const button = document.getElementById('confirm-button');
 const thTable = document.getElementsByTagName("th")
 
@@ -84,29 +89,67 @@ const getValues = () => {
         // namePerson = namePerson.toLowerCase().replace(/\s/g, "");
         // birthdatePerson = birthdatePerson.replace(/\D/g, "");
 
-       
-       let arrayName = []
-       let i = 0  
-       for(i=0; i<=namePerson.length; i++){
-        arrayName[i] = namePerson.charAt(i)
-       }
 
-       let arrayBirthdate = []
-       i = 0  
-       for(i=0; i<=birthdatePerson.length; i++){
-        arrayBirthdate[i] = birthdatePerson.charAt(i)
-       }
-      
-       document.getElementById("name_resp").innerHTML = arrayName.join(" - ")
-       
-      console.log(arrayName, arrayBirthdate, tabelaNumerologia.a) 
+        let arrayName = []
+        let arrayNameNumber = []
+        let i = 0
+        let j = 0
+        for (i = 0; i <= namePerson.length; i++) {
+            arrayName[i] = namePerson.charAt(i)
+        }
+
+        let arrayBirthdate = []
+        i = 0
+        for (i = 0; i <= birthdatePerson.length; i++) {
+            arrayBirthdate[i] = birthdatePerson.charAt(i)
+        }
+        // =======================================================================================================//
+
+        // for (i = 0; i < tableNumerologyLetter.length; i++) {
+        //     for (j = 0; j <= arrayName.length; j++) {
+        //         if (tableNumerologyLetter[i] === arrayName[j]) {
+        //             arrayNameNumber[j] = tableNumerologyNumber[i] 
+        //         }
+        //     }
+
+        // }
+
+
+        tableNumerologyLetter.forEach((variable, i) => {
+            arrayName.forEach((variable2, j) => {
+                if (variable === variable2) {
+                    arrayNameNumber[j] = tableNumerologyNumber[i]
+                }
+            })
+
+        })
+
+
+        //}
+
+        // sum = function(x,y){
+        //     for(i = 0; i < arrayNameNumber.length; i++){
+        //        x[i] =  arrayNameNumber[i] + arrayNameNumber[i++]
+        //        if(x[i] > 9)
+        //     }
+
+        // }
 
 
 
-    console.log(namePerson);
-    console.log(birthdatePerson);
-} else {
-    alert("Preencha Todos os Campos")
+        console.log(arrayNameNumber)
+        
+        const base1 = arrayName.join(" &nbsp ")
+        const base2 = arrayNameNumber.join(" &nbsp ")
+        const basex = `<table><tr>${base1}<br>${base2}</tr></table>`
+
+        document.getElementById("name_resp").innerHTML = basex
+        // document.getElementById("name_num1").innerHTML = arrayNameNumber.join(" &nbsp ")
+        
+        // console.log(namePerson);
+        // console.log(birthdatePerson);
+    } else {
+        alert("Preencha Todos os Campos")
     }
 
 }

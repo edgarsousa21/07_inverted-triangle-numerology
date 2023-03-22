@@ -146,17 +146,26 @@ p {
 
 }
 
-#name_resp{
-    font-size: 30px;    
+#name_resp {
+    font-size: 40px;  
+    color: black;  
 }
 
 
 /* RESPONSIVIDADE */
 
 @media screen and (max-width: 700px) {
+    body {
+        width: 100vw;
+        /* height: 200%; */
+    }
+
     #container-top {
         height: 40px;
+    }
 
+    .containers {
+        width: 100%;
     }
 
 
@@ -172,6 +181,7 @@ p {
     }
 
     #container-label {
+        width: 100%;
         padding: 10px 14px;
     }
 
@@ -208,17 +218,21 @@ p {
 
     }
 
-    #name_resp{
-        font-size: 22px;    
+    #name_resp {
+        font-size: 16px;
     }
 
     @media screen and (max-width: 350px) {
+
+        .containers{
+            width: 100%;
+        }
 
         #name-person {
             width: 100%;
             font-size: 15px;
         }
-    
+
         #birthdate {
             width: 100%;
             font-size: 15px;
@@ -226,7 +240,7 @@ p {
 
         button {
             width: 100%;
-    
+
         }
 
         p {
@@ -235,7 +249,11 @@ p {
             margin-top: 10px;
             text-align: justify;
             padding-top: 5px;
-            
+
+        }
+
+        #name_resp {
+            font-size: 10px;
         }
 
 
