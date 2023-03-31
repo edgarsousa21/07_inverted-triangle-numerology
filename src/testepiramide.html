@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numerologia Cabalística - Pirâmide Invertida</title>
+    <link rel="canonical" href="https://podernumeros.com.br/testepiramide.php" />
+    <meta name="title" content="Descubra o significado do seu nome e data de nascimento com seu Teste Numerológico GRATUITO e incrivelmente preciso. Aqui é a melhor fonte para a leitura da sua numerológia. Obtenha seu Teste Numerológico GRATUITO e personalizado agora mesmo." />
+    <meta content="Teste Numerológico Personalizado e GRATUITO - Calcule o seu Número de Destino, Número de Expressão e o Número de Motivação e Descubra o Melhor Caminho Para Você Alcançar Todos os Seus Objetivos de Vida." name="description">
+    <meta content="Numerologia cabalistica, numerologia, numeros, poder dos numeros," name="keywords">
+    
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Teste Numerológico Personalizado e GRATUITO - Calcule o seu Número de Destino, Número de Expressão e o Número de Motivação e Descubra o Melhor Caminho Para Você Alcançar Todos os Seus Objetivos de Vida." />
+    <meta property="og:description" content="Teste Numerológico Personalizado e GRATUITO - Calcule o seu Número de Destino, Número de Expressão e o Número de Motivação e Descubra o Melhor Caminho Para Você Alcançar Todos os Seus Objetivos de Vida." />
+    <meta property="og:url" content="https://podernumeros.com.br/" />
+    <meta property="og:site_name" content="Poder dos Números" />
+    <meta property="og:image" content="https://podernumeros.com.br/images/numerologia_cabalistica.png" />
+    <meta property="og:image:width" content="945" />
+    <meta property="og:image:height" content="945" />
+    <meta property="og:image:alt" content="Clique aqui para pegar o seu Teste Numerológico GRATUITO e totalmente personalizado com base no seu nome e data de nascimento." />
+    <meta property="article:publisher" content="https://www.facebook.com/poderdosnumeros/" />
+    <meta property="article:author" content="https://www.facebook.com/poderdosnumeros/" />
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <script src="./triangle.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		/* Estilos para o botão que irá abrir o popup */
+		.btn {
+			background-color: #4CAF50;
+			color: white;
+			padding: 12px 20px;
+			border: none;
+			cursor: pointer;
+			border-radius: 4px;
+		}
+
+/* Estilos para o popup */
+/* Estilos para o popup */
+/* Estilos para o popup */
+.popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
+}
+
+/* Estilos para o botão de fechar o popup */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Estilos para o conteúdo do popup */
+.popup-content {
+    margin-top: 10px;
+}
+
+/* Estilos para tornar o popup responsivo */
+@media screen and (max-width: 700px) {
+    .popup {
+        max-width: 100%;
+        max-height: 100%;
+
+    }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+}
+	</style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark shadow menu">
+    <a class="navbar-brand" href="https://podernumeros.com.br">
+      <img src="images/logo.png" alt="Poder dos Números" width="20%" height="20%"><b>PODER DOS NÚMEROS</b>
+    </a>
+  </nav>
+  <div align="center">
+    <table class="table-responsive">
+      <tbody>
+        <tr>
+          <td align="center">
+            <h1 class="display-3 fw-bold text-black">DESCRUBRE AS ENERGIAS DO SEU NOME!</h1>
+            <h2 class="fw-bold  text-black">PIRÂMIDE INVERTIDA</h2>
+            <br /><br />
+            <h2 class="fw-bold  text-black">Escreva no espaço abaixo o seu nome completo e sua data de nascimento:
+            </h2>
+            <br /><br /><br />
+          </td>
+        </tr>
+        <tr>
+  <td align="center">
+    <form>
+    <div class="container">
+        <div class="col-sm">
+          <input name="dataNascimento" type="text" id="birthdate" placeholder="Data de nascimento">
+        </div>
+        <br>
+        <div class="col-sm">
+          <input id="input-field" placeholder="Nome completo">
+        </div>
+    </div>
+    </form>
+    <br>
+    <button type="button" class="btn btn-primary" onclick="validarCampos()">Calcular</button>
+  </td>
+</tr>   
+        <tr>
+          <td align="center">
+          <b><div style="max-width: 400px; overflow-x: auto; display: none;" id="kabbalahNumerologyPyramid_result" class="container border text-black"></div></b>
+          </td>
+        </tr>
+
+        <tr>
+          <td align="center">
+          <div id="kabbalahNumerologyReport_result" class=" container text-black"></div>
+          </td>
+          </tr>
+          <tr>
+          <td align="center">
+
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <div id ="result1" style="display: none;" onclick="openPopupdes()" class="resultado border"><p>O destino rege a vida do ser humano e indica qual "caminho" evolutivo você deve seguir.</p><p id="result"></p><p>(Clique e saiba mais)</p></div>
+              </div>
+              <br>
+              <div class="col-md-6">
+                <div id ="result4" style="display: none;" onclick="openPopupday()" class="resultado border"><p>O Dia que você nasceu registra as qualidades inatas, ou seja, aquelas que nasceram e que permanecerão com você toda a vida, e irá mostrar quais são seus dons, personalidade e características.</p><p id="dayresult"></p><p>(Clique e saiba mais)</p></div>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-md-6">
+              <div id ="result2" style="display: none;" onclick="openPopupexp()" class="resultado border"><p>Mostra a maneira como a pessoa age e interage com os outros e com o mundo, revelando quais são os verdadeiros talentos e aptidões que desenvolverá ao longo da vida.</p><p id="resultadodonome"></p><p>(Clique e saiba mais)</p></div>
+              </div>
+              <br>
+              <div class="col-md-6">
+                <div id ="result3" style="display: none;" onclick="openPopupmis()" class="resultado border"><p>A missão é sua vocação para a sua autorrealização. Ela será desenvolvida independentemente de qual profissão se exerça, e estará presente em tudo que você fizer en sua vida</p><p id="misresult"></p><p>(Clique e saiba mais)</p></div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+	<!-- Popup -->
+	<div id="popupexp" class="popup">
+		<span class="close" onclick="closePopupexp()">&times;</span>
+		<div class="popup-content">
+			<h1 id="resultadodopop"></h1>
+      <iframe id="expresult"></iframe>
+		</div>
+	</div>
+  <div id="popupdes" class="popup">
+		<span class="close" onclick="closePopupdes()">&times;</span>
+		<div class="resultado popup-content">
+			<h1 id="destinopop"></h1>
+      <p id="destino"></p>
+			<p><iframe id="destinores"></iframe></p>
+		</div>
+	</div>
+  
+  <div id="popupmis" class="popup">
+		<span class="close" onclick="closePopupmis()">&times;</span>
+		<div class="popup-content">
+			<h1 id="misnopop"></h1>
+			<iframe id="misresult2"></iframe>
+		</div>
+	</div>
+
+  <div id="popupday" class="popup">
+		<span class="close" onclick="closePopupday()">&times;</span>
+		<div class="popup-content">
+			<h1 id="daynopop"></h1>
+			<iframe id="dayresult2"></iframe>
+		</div>
+	</div>
+
+
+  <div class="container">
+    <div class="col-md-12">
+      <p class="lead">Um nome sem energias negativas  é um <b>AMULETO</b> precioso que irá te colocar no caminho correto para atingir tudo aquilo que você sempre sonhou.</p>
+      <p class="lead">As energias negativas presentes no seu nome  podem ser solucionados através de um nome social e uma assinatura personalizada!</p>
+      <p class="lead">Não basta apenas tirar essas energias erradas, precisamos te alinhar com seus objetivos de vida, com seu destino e missão.</p>
+      <p class="lead">Para isso recomendamos o seu estudo numerológico completo!</p>
+
+      <p class="lead">A sua Numerologia é a ferramenta que vai garantir a correção dessas dificuldades e te proporcionar um autoconhecimento incrível e totalmente transformador.</p>
+
+      <h2>Você está pronto para corrigir suas energias erradas?</h2>
+      <br />
+      <center>
+        <a href="https://imersaonumerologia.com.br/s8sUVCu" target="_blank">
+          <buton class="btn btn-block btn-primary link-btn link-btn-rounded animated infinite pulse delay-2s">
+            <b>Quero minha numerologia completa</b>
+          </buton>
+        </a>
+      </center>
+    </div>
+  </div>
+<br />
+<script>
+  $(function() {
+    $("#birthdate").datepicker({
+      dateFormat: "dd/mm/yy",
+      changeMonth: true,
+      changeYear: true,
+      yearRange: "-100:+0"
+    });
+  });
+</script>
+
+<script>
+function validarCampos() {
+  const nome = document.getElementById("input-field").value;
+  const email = document.getElementById("birthdate").value;
+
+  if (nome && email) { // Se ambos os campos estiverem preenchidos
+    calcular();
+    showResult();
+    kabbalahNumerologyNameHandle(document.getElementById('input-field'), 'kabbalahNumerologyPyramid_result', 'kabbalahNumerologyReport_result');
+  } else {
+    alert("Por favor, preencha todos os campos.");
+  }
+}
+
+
+function calcular() {
+  var birthdate = document.getElementById("birthdate").value;
+
+  // Remove any non-digit characters from the birthdate string
+  birthdate = birthdate.replace(/\D/g, "");
+
+  // Split the birthdate into day, month, and year
+  var day = birthdate.substring(0, 2);
+  var month = birthdate.substring(2, 4);
+  var year = birthdate.substring(4, 8);
+  document.getElementById("dayresult").innerHTML = "<b>Dia de nascimento:</b> " +  day;
+  document.getElementById("daynopop").innerHTML = "<b>Dia: </b> " +  day;
+  var dianas = day;
+  // Calculate the initial sum of the birthdate digits
+  var sum = parseInt(day.charAt(0)) + parseInt(day.charAt(1)) + 
+            parseInt(month.charAt(0)) + parseInt(month.charAt(1)) +
+            parseInt(year.charAt(0)) + parseInt(year.charAt(1)) + 
+            parseInt(year.charAt(2)) + parseInt(year.charAt(3));
+
+  // Check if the sum is 11 or 22, and display the result if it is
+  if (sum == 11 || sum == 22) {
+    document.getElementById("result").innerHTML = "<b>Destino:</b> " + sum;
+    document.getElementById("destinopop").innerHTML = "<b>Destino:</b> " +  sum;
+    dest = sum;
+  }
+  // Check if the sum is 2 or 4, and calculate the secondary sum if it is
+  else if (sum == 2 || sum == 4) {
+    var daySum = sumDigits(day);
+    var monthSum = sumDigits(month);
+    var yearSum = sumDigits(year);
+
+    var secondarySum = daySum + monthSum + yearSum;
+
+    // Check if the secondary sum is 11 or 22, and display the result if it is
+    if (secondarySum == 11 || secondarySum == 22) {
+      document.getElementById("result").innerHTML = "<b>Destino:</b> " + secondarySum;
+      document.getElementById("destinopop").innerHTML = "<b>Destino:</b> " +  finalSum;
+      dest = secondarySum;
+    }
+    // Otherwise, calculate the final sum
+    else {
+      var finalSum = sumDigits(secondarySum.toString());
+
+      document.getElementById("result").innerHTML = "<b>Destino:</b> " +  finalSum;
+      document.getElementById("destinopop").innerHTML = "<b>Destino:</b> " +  finalSum;
+      dest = finalSum;
+    }
+  }
+  // Otherwise, calculate the final sum
+  else {
+    var finalSum = sumDigits(sum.toString());
+
+    document.getElementById("result").innerHTML = "<b>Destino:</b> " +  finalSum;
+    document.getElementById("destinopop").innerHTML = "<b>Destino:</b> " +  finalSum;
+    dest = finalSum;
+  }
+  
+  var nome = document.getElementById("input-field").value.toLowerCase().replace(/\s/g, "");
+
+    // converter cada letra em um número usando a tabela de correspondência
+    var numeros = [];
+    for (var i = 0; i < nome.length; i++) {
+      var letra = nome.charAt(i);
+      var numero = tabelaNumerologia[letra];
+      numeros.push(numero);
+    }
+
+    // somar os números e reduzir a um único dígito
+    var soma = 0;
+    for (var i = 0; i < numeros.length; i++) {
+      soma += numeros[i];
+      somatudo=soma;
+    }
+
+    // tratar casos especiais de soma igual a 11 ou 22
+    if (soma == 11 || soma == 22) {
+      soma = soma.toString();
+    }
+    else{
+      while (soma > 9) {
+        var somaString = soma.toString();
+        soma = 0;
+        for (var i = 0; i < somaString.length; i++) {
+          if (soma == 11 || soma == 22 ){
+            break;
+          }
+          var digito = parseInt(somaString.charAt(i));
+          soma += digito;
+        }
+        if (soma == 11 || soma == 22 ){
+            break;
+          }
+      }
+    }
+    // exibir o resultado 
+    var mis = dest + soma;
+
+    if(mis > 9){
+          if (mis == 11 || mis == 22) {
+            document.getElementById("misresult").innerHTML = "<b> Missão: </b>  " +  mis;
+            document.getElementById("misnopop").innerHTML = "<b>Missão: </b> " +  mis;
+            var misFinal = mis;
+          }
+          else if(mis > 9){
+            let numero = mis; //o número que você quer separar e somar
+            let dezena = Math.floor (numero / 10); //obtém o primeiro dígito
+            let unidade = numero % 10; //obtém o segundo dígito
+            let misSum = dezena + unidade; //soma os dígitos
+            if(misSum > 9){
+              numero = misSum;
+              dezen = Math.floor (numero / 10); 
+              unidade = numero % 10;
+              misSum = dezena + unidade;
+              document.getElementById("misresult").innerHTML = "<b>Missão:</b>  " +  misSum;
+              document.getElementById("misnopop").innerHTML = "<b>Missão: </b> " +  misSum;
+              var misFinal = misSum;
+              }
+              else{
+                document.getElementById("misresult").innerHTML = "<b>Missão:</b> " +  misSum; 
+                document.getElementById("misnopop").innerHTML = "<b>Missão: </b> " +  misSum;
+                var misFinal = misSum;
+              }
+            }
+            else{
+              document.getElementById("misresult").innerHTML = "<b>Missão:</b> " +  misSum;
+              document.getElementById("misnopop").innerHTML = "<b>Missão: </b> " +  misSum;
+              var misFinal = misSum;
+            }
+          }
+        else{
+        document.getElementById("misresult").innerHTML = "<b>Missão:</b> " +  mis;
+        document.getElementById("misnopop").innerHTML = "<b>Missão: </b> " +  mis;
+        var misFinal = mis;
+        }
+    //document.getElementeById("misresult").innerHTML = "Missão é: " + mis;
+    //document.getElementById("misresult").innerHTML = "<b>missão:</b> = " +  mis;
+    var resultado = document.getElementById("resultadodonome");
+    resultado.innerHTML = "<b>Número de expressão é:</b> " + soma;
+    var resultado = document.getElementById("resultadodopop");
+    resultado.innerHTML = "Expressão " + soma;
+
+    var urldes = "textos/destino/destino" + dest.toString() + ".html";
+    document.getElementById("destinores").src = urldes;
+    
+    var urlexp = "textos/exp/exp" + soma.toString() + ".html";
+    document.getElementById("expresult").src = urlexp;
+
+    var urlmis = "textos/mis/mis" + misFinal.toString() + ".html";
+    document.getElementById("misresult2").src = urlmis;
+    
+    var urlday = "textos/dia/" + dianas.toString() + ".html";
+    document.getElementById("dayresult2").src = urlday;
+
+      }
+// Function to sum the digits of a number
+
+function sumDigits(num) {
+  var sum = 0;
+
+  for (var i = 0; i < num.length; i++) {
+    sum += parseInt(num.charAt(i));
+  }
+
+  // If the sum is greater than 9, sum the digits again
+  while (sum > 9) {
+    sum = sumDigits(sum.toString());
+  }
+
+  return sum;
+}
+
+var tabelaNumerologia = {
+    "b": 2,
+    "c": 3,
+    "ç": 6,
+    "d": 4,
+    "f": 8,
+    "g": 3,
+    "h": 5,
+    "j": 1,
+    "k": 2,
+    "l": 3,
+    "m": 4,
+    "n": 5,
+    "ñ": 8,
+    "p": 8,
+    "q": 1,
+    "r": 2,
+    "s": 3,
+    "t": 4,
+    "v": 6,
+    "x": 6,
+    "w": 6,
+    "z": 7,
+    "a": 1,
+    "á": 3,
+    "â": 8,
+    "ã": 4,
+    "à": 2,
+    "ä": 2,
+    "e": 5,
+    "é": 7,
+    "ê": 3,
+    "è": 1,
+    "ë": 1,
+    "i": 1,
+    "í": 3,
+    "ì": 2,
+    "î": 8,
+    "ï": 2,
+    "o": 7,
+    "ó": 9,
+    "ô": 5,
+    "õ": 1,
+    "ò": 5,
+    "ö": 5,
+    "u": 6,
+    "ú": 8,
+    "ü": 3,
+    "ù": 3,
+    "y": 1
+};
+function openPopupexp() {
+			document.getElementById("popupexp").style.display = "block";
+      document.getElementById("popupdes").style.display = "none";
+      document.getElementById("popupmis").style.display = "none";
+      document.getElementById("popupday").style.display = "none";
+		}
+
+		function closePopupexp() {
+			document.getElementById("popupexp").style.display = "none";
+		}
+
+    function openPopupdes() {
+			document.getElementById("popupdes").style.display = "block";
+      document.getElementById("popupexp").style.display = "none";
+      document.getElementById("popupmis").style.display = "none";
+      document.getElementById("popupday").style.display = "none";
+		}
+
+		function closePopupdes() {
+			document.getElementById("popupdes").style.display = "none";
+		}
+
+    function openPopupmis() {
+			document.getElementById("popupmis").style.display = "block";
+      document.getElementById("popupexp").style.display = "none";
+      document.getElementById("popupdes").style.display = "none";
+      document.getElementById("popupday").style.display = "none";
+		}
+
+		function closePopupmis() {
+			document.getElementById("popupmis").style.display = "none";
+		}
+    function openPopupday() {
+			document.getElementById("popupday").style.display = "block";
+      document.getElementById("popupexp").style.display = "none";
+      document.getElementById("popupdes").style.display = "none";
+      document.getElementById("popupmis").style.display = "none";
+		}
+
+		function closePopupday() {
+			document.getElementById("popupday").style.display = "none";
+		}
+
+
+    function showResult() {
+      document.getElementById("result1").style.display = "block";
+      document.getElementById("result2").style.display = "block";
+      document.getElementById("result3").style.display = "block";
+      document.getElementById("result4").style.display = "block";
+      document.getElementById("kabbalahNumerologyPyramid_result").style.display = "block";
+
+    }
+    
+
+</script>
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////
+                           START SECTION 9 - THE FOOTER  
+///////////////////////////////////////////////////////////////////////////////////////////////-->
+<section id="contato" class="contato">
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <!-- CONTENT FOR THE MOBILE NUMBER  -->
+      <div class="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
+        <div class="contact-box__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-phone-call" viewBox="0 0 24 24" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+            <path d="M15 7a2 2 0 0 1 2 2" />
+            <path d="M15 3a6 6 0 0 1 6 6" />
+          </svg>
+        </div>
+        <div class="contact-box__info">
+          <a href="https://api.whatsapp.com/send?phone=5541995539095&text=Ol%C3%A1%20gostaria%20de%20saber%20mais%20sobre%20meus%20números" class="contact-box__info--title">+55 (41) 99553-9095</a>
+          <p class="contact-box__info--subtitle"> WhatsApp</p>
+        </div>
+      </div>  
+      <!-- CONTENT FOR EMAIL  -->
+      <div class="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
+        <div class="contact-box__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail-opened" viewBox="0 0 24 24" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <polyline points="3 9 12 15 21 9 12 3 3 9" />
+            <path d="M21 9v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" />
+            <line x1="3" y1="19" x2="9" y2="13" />
+            <line x1="15" y1="13" x2="21" y2="19" />
+          </svg>
+        </div>
+        <div class="contact-box__info">
+          <a href="mailto:fabricio@poderdosnumeros.com" class="contact-box__info--title">fabricio@poderdosnumeros.com</a>
+          <p class="contact-box__info--subtitle">Email</p>
+        </div>
+      </div>
+      <!-- CONTENT FOR LOCATION  -->
+      <div class="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
+        <div class="contact-box__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-2" viewBox="0 0 24 24" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <line x1="18" y1="6" x2="18" y2="6.01" />
+            <path d="M18 13l-3.5 -5a4 4 0 1 1 7 0l-3.5 5" />
+            <polyline points="10.5 4.75 9 4 3 7 3 20 9 17 15 20 21 17 21 15" />
+            <line x1="9" y1="4" x2="9" y2="17" />
+            <line x1="15" y1="15" x2="15" y2="20" />
+          </svg>
+        </div>
+        <div class="contact-box__info">
+          <a href="#" class="contact-box__info--title">Curitiba, PR</a>
+          <p class="contact-box__info--subtitle">Brasil</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- START THE SOCIAL MEDIA CONTENT  -->
+  <div class="footer-sm" style="background-color: #212121;">
+    <div class="container">
+      <div class="row py-4 text-center text-white">
+        <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
+          Nos siga e acompanhe todas as novidades!
+        </div>
+        <div class="col-lg-7 col-md-6">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- START THE COPYRIGHT INFO  -->
+  <div class="footer-bottom pt-5 pb-5">
+    <div class="container">
+      <div class="row text-center text-white">
+        <div class="col-12">
+          <div class="footer-bottom__copyright">
+            &COPY; 2023<a href="#home">Poder dos Números</a> | Created by <a href="https://altaads.com.br" target="_blank">Alta Digital Solutions</a><br><br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</section>
+
+<!-- BACK TO TOP BUTTON  -->
+<a href="#" class="shadow btn-primary rounded-circle back-to-top">
+  <i class="fas fa-chevron-up"></i>
+</a>
+</body>
+</html>

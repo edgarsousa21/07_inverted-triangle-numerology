@@ -5,9 +5,12 @@
 // console.log(birthdate1)
 //const namePerson = document.getElementById('name-person').value.toLowerCase().replace(/\s/g, "");
 // substring(i,j)
+// toLowerCase() => todas as letras minúsculas
 // charAt()
 // toString()
 //join()
+//pop() e shift() eliminar elemento array
+// typeof
 
 
 
@@ -74,7 +77,7 @@ const tableNumerologyNumber = [1, 3, 8, 4, 2, 2, 2, 3, 6, 4, 5, 7, 3, 1, 1, 8, 3
 // =======================================================================================================//
 
 
-const button = document.getElementById('confirm-button');
+// const button = document.getElementById('confirm-button');
 const thTable = document.getElementsByTagName("th")
 
 
@@ -82,7 +85,7 @@ const getValues = () => {
     const namePerson = document.getElementById('name-person').value.toLowerCase().replace(/\s/g, "");
     const birthdatePerson = document.getElementById('birthdate').value.replace(/\D/g, "");
 
-    if (namePerson && birthdatePerson) {
+    if (namePerson || birthdatePerson) {
         // document.getElementById("main-title").innerHTML = `<h1>${namePerson}, nascido em: ${birthdatePerson} </h1>`;
         // document.getElementsByTagName("th").innerHTML = `<th>Olá Mundo</th>`;
 
@@ -98,11 +101,14 @@ const getValues = () => {
             arrayName[i] = namePerson.charAt(i)
         }
 
+        arrayName.pop()
+
         let arrayBirthdate = []
         i = 0
         for (i = 0; i <= birthdatePerson.length; i++) {
             arrayBirthdate[i] = birthdatePerson.charAt(i)
         }
+        arrayBirthdate.pop()
         // =======================================================================================================//
 
         // for (i = 0; i < tableNumerologyLetter.length; i++) {
@@ -124,30 +130,114 @@ const getValues = () => {
 
         })
 
+        function sumDigitWhile(number) {
+            let numberA
+            while (number > 9) {
+                numberA = Math.floor(number / 10) + (number % 10)
+                number = numberA
 
-        //}
+            }
+            return numberA
+        }
+        /*
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        */
 
-        // sum = function(x,y){
-        //     for(i = 0; i < arrayNameNumber.length; i++){
-        //        x[i] =  arrayNameNumber[i] + arrayNameNumber[i++]
-        //        if(x[i] > 9)
-        //     }
+        let baseName = document.querySelector('#name-resp')
+        baseName.innerHTML = `<h2>${arrayName.join(" &nbsp ")}</h2>`
+        baseName.innerHTML += `<h2>${arrayNameNumber.join(" &nbsp ")}</h2>`
+
+        const end = arrayNameNumber.length
+        let count = []
+        let copy = []
+        let num = []
+        let vetor = []
+        copy = arrayNameNumber
+        let x = 0
+
+        /*
+        count.splice(0, count.length)
+        for (i = 0; i < end; i++) {
+            count[i] = copy[i] + copy[i + 1]
+
+            if (count[i] > 9) {
+                count[i] = Math.floor(count[i] / 10) + (count[i] % 10)
+            }
+        
+        }
+        count.pop();            
+        // copy.splice(0, copy.length)
+        copy = count
+        vetor[j] = count
+        console.log(copy) 
+        */
+
+
+        for (j = 0; j < end; j++ ) {
+
+            for (i = 0; i < copy.length; i++) {
+                num[j] = count
+                count[i] = copy[i] + copy[i + 1]
+
+                if (count[i] > 9) {
+                    vetor = sumDigitWhile(count[i])
+                    count[i] = vetor
+                    // count[i] = Math.floor(count[i] / 10) + (count[i] % 10)
+                }
+
+                num[j] += count
+            }
+            copy = count
+            count.pop()
+            baseName.innerHTML += `<h2>${count.join(" &nbsp ")}</h2>`
+
+
+        }
+
+
+
+        copy = count
+        console.log(`copy: ${copy} count: ${count} vetor: ${vetor}`)
+        // alert(`${count}`)
 
         // }
 
 
 
-        console.log(arrayNameNumber)
-        
-        const base1 = arrayName.join(" &nbsp ")
-        const base2 = arrayNameNumber.join(" &nbsp ")
-        const basex = `<table><tr>${base1}<br>${base2}</tr></table>`
 
-        document.getElementById("name_resp").innerHTML = basex
-        // document.getElementById("name_num1").innerHTML = arrayNameNumber.join(" &nbsp ")
-        
+
+
+        /*
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        */
+
+
+
+
+
+
+        /*
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        */
+
+
+
+        // console.log(arrayNameNumber) 
+
+        // const base1 = arrayName.join(" &nbsp ")
+        // const base2 = arrayNameNumber.join(" &nbsp ")
+        // const base3 = count.join(" &nbsp ")
+        // const basex = `<table><tr>${base1}<br>${base2}<br>${base3}<br></tr><br></table>`
+        // document.getElementById("name-resp").innerHTML = basex
+
+        // document.getElementById("name-numb").innerHTML = arrayNameNumber.join(" &nbsp ")       
         // console.log(namePerson);
-        // console.log(birthdatePerson);
+        // console.log(birthdatePerson);  
+
+
+
+
+
     } else {
         alert("Preencha Todos os Campos")
     }
@@ -161,5 +251,5 @@ const getValues = () => {
 
 
 
-button.addEventListener('click', getValues);
+// button.addEventListener('click', getValues);
 
