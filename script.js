@@ -7,10 +7,16 @@
 // substring(i,j)
 // toLowerCase() => todas as letras minúsculas
 // charAt()
+//indexOf()
 // toString()
 //join()
 //pop() e shift() eliminar elemento array
 // typeof
+// const dataFunction = (dateCalc) =>{
+//     console.log(`Hoje é: ${dateCalc.getDate()}/${dateCalc.getMonth()+1}/${dateCalc.getFullYear()} às ${dateCalc.getHours()}:${dateCalc.getMinutes()}:${dateCalc.getSeconds()} `)
+// }
+// let data = new Date()
+// dataFunction(data)
 
 
 
@@ -78,37 +84,45 @@ const tableNumerologyNumber = [1, 3, 8, 4, 2, 2, 2, 3, 6, 4, 5, 7, 3, 1, 1, 8, 3
 
 
 // const button = document.getElementById('confirm-button');
-const thTable = document.getElementsByTagName("th")
+const thTable = document.getElementsByTagName('th')
+const piramide = document.getElementById('piramide')
 
-
+const reset = () => {
+    window.location.reload()
+}
 const getValues = () => {
-    const namePerson = document.getElementById('name-person').value.toLowerCase().replace(/\s/g, "");
-    const birthdatePerson = document.getElementById('birthdate').value.replace(/\D/g, "");
 
-    if (namePerson || birthdatePerson) {
+    const entername = document.getElementById('name-person').value
+    const namePerson = entername.replace(/\s/g, "");
+    // const namePersonOriginal = document.querySelector('#name-person').value
+    // const birthdatePerson = document.getElementById('birthdate').value.replace(/\D/g, "");
+
+
+    if (namePerson.length != 0) {
         // document.getElementById("main-title").innerHTML = `<h1>${namePerson}, nascido em: ${birthdatePerson} </h1>`;
         // document.getElementsByTagName("th").innerHTML = `<th>Olá Mundo</th>`;
 
         // namePerson = namePerson.toLowerCase().replace(/\s/g, "");
         // birthdatePerson = birthdatePerson.replace(/\D/g, "");
 
-
+        let arrayOriginal = []
         let arrayName = []
         let arrayNameNumber = []
         let i = 0
         let j = 0
         for (i = 0; i <= namePerson.length; i++) {
-            arrayName[i] = namePerson.charAt(i)
+            arrayName[i] = namePerson.toLowerCase().charAt(i)
+            arrayOriginal[i] = namePerson.charAt(i)
         }
-
+        arrayOriginal.pop()
         arrayName.pop()
 
-        let arrayBirthdate = []
-        i = 0
-        for (i = 0; i <= birthdatePerson.length; i++) {
-            arrayBirthdate[i] = birthdatePerson.charAt(i)
-        }
-        arrayBirthdate.pop()
+        // let arrayBirthdate = []
+        // i = 0
+        // for (i = 0; i <= birthdatePerson.length; i++) {
+        //     arrayBirthdate[i] = birthdatePerson.charAt(i)
+        // }
+        // arrayBirthdate.pop()
         // =======================================================================================================//
 
         // for (i = 0; i < tableNumerologyLetter.length; i++) {
@@ -139,70 +153,99 @@ const getValues = () => {
             }
             return numberA
         }
+        // Teste
+        console.log(`arrayoriginal: ${arrayOriginal},\narraynamenumber: ${arrayNameNumber},\nnameperson: ${namePerson},\narrayname: ${arrayName}`)
         /*
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         */
 
-        let baseName = document.querySelector('#name-resp')
-        baseName.innerHTML = `<h2>${arrayName.join(" &nbsp ")}</h2>`
-        baseName.innerHTML += `<h2>${arrayNameNumber.join(" &nbsp ")}</h2>`
+        let baseName = document.querySelector('tr#name-resp')
+        baseName.innerHTML = `<strong><p style="text-align: center">${arrayOriginal.join(" &nbsp ")}</p></strong>`
+        baseName.innerHTML += `<p style="text-align: center">${arrayNameNumber.join(" &nbsp ")}</p>`
 
         const end = arrayNameNumber.length
         let count = []
         let copy = []
         let num = []
         let vetor = []
+        let neg = []
         copy = arrayNameNumber
         let x = 0
 
-        /*
-        count.splice(0, count.length)
-        for (i = 0; i < end; i++) {
-            count[i] = copy[i] + copy[i + 1]
-
-            if (count[i] > 9) {
-                count[i] = Math.floor(count[i] / 10) + (count[i] % 10)
-            }
-        
-        }
-        count.pop();            
-        // copy.splice(0, copy.length)
-        copy = count
-        vetor[j] = count
-        console.log(copy) 
-        */
 
 
-        for (j = 0; j < end; j++ ) {
+
+        for (j = 0; j < end; j++) {
 
             for (i = 0; i < copy.length; i++) {
-                num[j] = count
+
                 count[i] = copy[i] + copy[i + 1]
 
                 if (count[i] > 9) {
                     vetor = sumDigitWhile(count[i])
                     count[i] = vetor
-                    // count[i] = Math.floor(count[i] / 10) + (count[i] % 10)
+                    // console.log(`Vetor:${vetor} `)
+
+
+
                 }
 
-                num[j] += count
+
             }
             copy = count
             count.pop()
-            baseName.innerHTML += `<h2>${count.join(" &nbsp ")}</h2>`
+            // neg = numberRed(count, count.length)
+            baseName.innerHTML += `<p style="text-align: center" >${count.join(" &nbsp ")}</p>`
+            num.push(count)
+            console.log(count,neg)
 
+            console.log(`NUM = ${num}`)
+
+
+            function numberRed(array, index) {
+                let negativeSequence = []
+                while (index >= 3) {
+                    for (i = 2; i < index; i++) {
+                        if (array[i] === array[i - 1] && array[i] === array[i - 2]) {
+                            // array[i - 2] = '<span style=color:red>' + count[i - 2] + '</span>' 
+                            // array[i - 1] = '<span style=color:red>' + count[i - 1] + '</span>' 
+                            // array[i] = '<span style=color:red>' + count[i] + '</span>' 
+                            negativeSequence = array.slice(i - 2, 3)
+                        }
+
+                    }
+
+                }
+                return negativeSequence
+
+            }
+            piramide.innerHTML = `Pirâmide Invertida no Nome: <span>${entername}</span>`
+
+
+
+            // for (i = 2; i < count.length; i++) {
+            //     if (count[i] === count[i - 1] && count[i] === count[i - 2]) {
+            //         count[i - 2] = '<span style=color:red>' + count[i -2] + '</span>' 
+            //         count[i - 1] = '<span style=color:red>' + count[i -1] + '</span>' 
+            //         count[i] = '<span style=color:red>' + count[i] + '</span>'                     
+            //     } 
+
+            // }
+            // baseName.innerHTML += `<p style="text-align: center" >${count.join(" &nbsp ")}</p>`
+            // count = []
+            // count = num
 
         }
 
 
 
-        copy = count
-        console.log(`copy: ${copy} count: ${count} vetor: ${vetor}`)
-        // alert(`${count}`)
 
-        // }
+        // baseName.innerHTML += `<h2 style="color:red">${num.join(" &nbsp ")}</h2>`
+        //   ${count.join(" &nbsp ")}
 
-
+        // copy = count
+        // console.log(`copy: ${copy} count: ${count} vetor: ${vetor}`)
+        // count[i] = Math.floor(count[i] / 10) + (count[i] % 10)
 
 
 
@@ -234,12 +277,38 @@ const getValues = () => {
         // console.log(namePerson);
         // console.log(birthdatePerson);  
 
+        /*
+       ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+       */
+       
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        const localButton = document.querySelector("#local-button")
+        const myLink = document.querySelector("#my-link")
+        const buttonReset = document.createElement('input')
+        buttonReset.setAttribute('type', 'button')
+        buttonReset.setAttribute('id', 'button-reset')
+        buttonReset.setAttribute('value', 'Reset')
+        buttonReset.setAttribute('href', 'container-medium')
+        localButton.appendChild(buttonReset)
 
+        const contact = document.createElement('input')
+        contact.setAttribute('type', 'button')
+        contact.setAttribute('id', 'my-contact')
+        contact.setAttribute('value', 'Clique aqui para corrigir suas Energias')        
+        myLink.appendChild(contact)
+      
 
+            
+        
+        
+        buttonReset.addEventListener('click', reset)
 
+        /*
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        */
 
     } else {
-        alert("Preencha Todos os Campos")
+        alert("Por favor, preencha o seu nome completo.")
     }
 
 }
