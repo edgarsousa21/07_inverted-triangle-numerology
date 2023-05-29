@@ -39,7 +39,7 @@
                     Nome Completo <br>
                     <input id="name-person" min="0" type="text" placeholder=" Digite seu Nome de Batismo Completo">
                 </label>
-                <a href="#local-button"><button id="confirm-button" onclick="getValues()">Clique e descubra o que te
+                <a href="#local-button"><button id="confirm-button" onclick="getValues()" ondblclick="reset()">Clique e descubra o que te
                         impede de crescer e prosperar</button></a>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam consequatur et quasi eius culpa
                     reiciendis obcaecati dolor eligendi ut, cum aliquam dicta quos placeat cupiditate corporis facilis
@@ -52,7 +52,7 @@
         <section id="container-back" class="containers">
             <div id="div-triangle">
                 <table>
-                    <tr id="name-resp"></tr>
+                    <tr id="name-resp"><span style=color:red id="neg-numb"></span></tr>
                 </table>
             </div>
 

@@ -83,22 +83,24 @@ const tableNumerologyNumber = [1, 3, 8, 4, 2, 2, 2, 3, 6, 4, 5, 7, 3, 1, 1, 8, 3
 // =======================================================================================================//
 
 
-// const button = document.getElementById('confirm-button');
+const button = document.getElementById('confirm-button');
 const thTable = document.getElementsByTagName('th')
 const piramide = document.getElementById('piramide')
 
 const reset = () => {
-    window.location.reload()
+    window.location.reload()            
 }
-const getValues = () => {
-
-    const entername = document.getElementById('name-person').value
+const getValues = () => {    
+    const entry = document.getElementById('name-person')
+    entry.focus()
+    const entername = entry.value
     const namePerson = entername.replace(/\s/g, "");
     // const namePersonOriginal = document.querySelector('#name-person').value
     // const birthdatePerson = document.getElementById('birthdate').value.replace(/\D/g, "");
 
 
     if (namePerson.length != 0) {
+        button.style.display = 'none'
         // document.getElementById("main-title").innerHTML = `<h1>${namePerson}, nascido em: ${birthdatePerson} </h1>`;
         // document.getElementsByTagName("th").innerHTML = `<th>Olá Mundo</th>`;
 
@@ -186,39 +188,43 @@ const getValues = () => {
                     count[i] = vetor
                     // console.log(`Vetor:${vetor} `)
 
-
-
                 }
-
-
             }
             copy = count
             count.pop()
-            // neg = numberRed(count, count.length)
+            num = count
+            // numberRed()
             baseName.innerHTML += `<p style="text-align: center" >${count.join(" &nbsp ")}</p>`
-            num.push(count)
-            console.log(count,neg)
+            count = num
+            console.log(`Count: ${count}, Neg: ${neg}`)
 
             console.log(`NUM = ${num}`)
 
 
-            function numberRed(array, index) {
-                let negativeSequence = []
-                while (index >= 3) {
-                    for (i = 2; i < index; i++) {
-                        if (array[i] === array[i - 1] && array[i] === array[i - 2]) {
-                            // array[i - 2] = '<span style=color:red>' + count[i - 2] + '</span>' 
-                            // array[i - 1] = '<span style=color:red>' + count[i - 1] + '</span>' 
-                            // array[i] = '<span style=color:red>' + count[i] + '</span>' 
-                            negativeSequence = array.slice(i - 2, 3)
+            function numberRed(count) {
+                let negativeSequence = [];
+                if (count.length >= 3) {
+                    for (let i = 2; i < count.length; i++) {
+                        if (count[i] === count[i - 1] && count[i] === count[i - 2]) {
+                            count[i - 2] = '<span style="color:' + red + '">' + count[i - 2] + '</span>';
+                            count[i - 1] = '<span style="color:' + red + '">' + count[i - 1] + '</span>';
+                            count[i] = '<span style="color:' + red + '">' + count[i] + '</span>';
+                            negativeSequence[i - 2] = count[i - 2];
+                            negativeSequence[i - 1] = count[i - 1];
+                            negativeSequence[i] = count[i];
                         }
-
                     }
-
+                    console.log(`Negative Sequence: ${negativeSequence}`);
+                    return negativeSequence;
+                } else {
+                    return count;
                 }
-                return negativeSequence
-
             }
+
+
+
+
+
             piramide.innerHTML = `Pirâmide Invertida no Nome: <span>${entername}</span>`
 
 
@@ -280,7 +286,7 @@ const getValues = () => {
         /*
        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
        */
-       
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         const localButton = document.querySelector("#local-button")
         const myLink = document.querySelector("#my-link")
@@ -294,13 +300,13 @@ const getValues = () => {
         const contact = document.createElement('input')
         contact.setAttribute('type', 'button')
         contact.setAttribute('id', 'my-contact')
-        contact.setAttribute('value', 'Clique aqui para corrigir suas Energias')        
+        contact.setAttribute('value', 'Clique aqui para corrigir suas Energias')
         myLink.appendChild(contact)
-      
 
-            
-        
-        
+
+
+
+
         buttonReset.addEventListener('click', reset)
 
         /*
