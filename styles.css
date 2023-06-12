@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    outline: none;
 }
 
 body {
@@ -23,15 +24,13 @@ body {
 
 }
 
-#container-top {
-    border: 1px solid black;
+header#container-top {
     background-color: #4c1650;
     width: 100%;
     height: 80px;
 }
 
-#container-medium {
-    border: 1px solid black;
+main#container-medium {
     background-color: white;
     width: 100%;
     height: 550px;
@@ -39,10 +38,11 @@ body {
     flex-direction: column;
     align-items: center;
     align-content: center;
+    gap: 70px;
 }
 
-h1 {
-    font-size: 48px;
+h1#main-title {
+    font-size: 40px;
     text-align: center;
 }
 
@@ -58,36 +58,33 @@ h3 {
     margin: 13px 0 13px 0;
 }
 
-#container-back {   
+#container-back {
     /* width: 2480px;
     height: 3508px; */
-    border: 1px solid black;
     background-color: #52bc53;
     width: 100%;
     height: auto;
     display: flex;
-    flex-flow: column wrap;    
+    flex-flow: column wrap;
     align-self: center;
     justify-content: center;
     padding: 20px 300px 0 300px;
     margin: auto;
 }
 
-.name-resp{
+.name-resp {
     display: flex;
-    align-self: center;   
+    align-self: center;
     text-align: center;
-        
+
 }
 
-.box-table{
-    border: 1px solid black;
+.box-table {
     display: flex;
 
 }
 
 #container-label {
-    border: 1px solid black;
     width: 100%;
     height: 100%;
     display: flex;
@@ -99,19 +96,21 @@ h3 {
 }
 
 #name-person {
-    width: 300px;
+    width: 450px;
     background: #FFFFFF;
     border: 1px solid #BBBBBB;
     border-radius: 4px;
     height: 48px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
     font-size: 16px;
+    margin-top: 12px;
 
 
 }
 
 #label-name {
     margin-top: 30px;
+
 
 }
 
@@ -122,14 +121,18 @@ h3 {
 
 
 button {
-    width: 300px;
+    width: 450px;
     height: 50px;
     border: none;
-    background-color: #52bc53;
+    background-color: #31C455;
     cursor: pointer;
-    margin-top: 40px;
+    margin: 40px 0;
     color: #FFFFFF;
+    font-size: 16px;
     font-weight: bold;
+    border: none;
+    border-radius: 30px;
+
 }
 
 button:hover {
@@ -143,7 +146,7 @@ button:active {
 
 b {
     color: #fbce07;
-    
+
 }
 
 p {
@@ -154,28 +157,28 @@ p {
 
 }
 
-span{
+span {
     color: #fbce07;
     font-size: 30px;
 }
 
 #name_resp {
-    font-size: 40px;  
-    color: black;  
+    font-size: 40px;
+    color: black;
 }
 
-#negative{
+#negative {
     height: auto;
     width: auto;
 }
 
 input#button-reset {
-    margin:auto;
+    margin: auto;
     width: 100px;
     height: 30px;
     border-radius: 30px;
     background-color: red;
-    color:white;
+    color: white;
 
 }
 
@@ -200,10 +203,14 @@ input#button-reset {
     opacity: 0.5;
 }
 
-#local-button{
-    display:flex;
+#local-button {
+    display: flex;
     flex-flow: column wrap;
     gap: 20px;
+}
+
+p.repeat {
+    color: red;
 }
 
 /* RESPONSIVIDADE */
@@ -238,11 +245,11 @@ input#button-reset {
         margin: 13px 0 13px 0;
     }
 
-    span{
+    span {
         font-size: 15px;
     }
 
-    
+
 
 
     #container-label {
@@ -254,7 +261,7 @@ input#button-reset {
         width: 95%;
     }
 
- 
+
 
     #label-name {
         margin-top: 30px;
@@ -287,24 +294,32 @@ input#button-reset {
 
     @media screen and (max-width: 350px) {
 
-        .containers{
+        .containers {
             width: 100%;
         }
 
-        #name-person {
+        input#name-person {
             width: 100%;
             font-size: 15px;
         }
 
-        piramide{
+        h1#main-title {
+            font-size: 20px;
+        }
+
+        main#container-medium {
+            gap: 25px;
+        }
+
+        h3#piramide {
             font-size: 10px;
         }
 
-        span{
+        span {
             font-size: 10px;
         }
 
-    
+
 
         button {
             width: 100%;
@@ -318,6 +333,11 @@ input#button-reset {
             text-align: justify;
             padding-top: 5px;
 
+        }
+
+        p#text3 {
+            font-size: 13px;            
+            width: 100%;
         }
 
         #name_resp {
