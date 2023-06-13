@@ -8,13 +8,11 @@
 
 body {
     width: 100vw;
-    height: auto;
-    border: 1px solid red;
-    background-color: #52bc53;
+    height: 100vh;
+    background-color: #FFFFFF;
 }
 
 #container-master {
-    border: 1px solid greenyellow;
     width: 100%;
     height: auto;
     display: flex;
@@ -33,7 +31,7 @@ header#container-top {
 main#container-medium {
     background-color: white;
     width: 100%;
-    height: 550px;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,7 +59,7 @@ h3 {
 #container-back {
     /* width: 2480px;
     height: 3508px; */
-    background-color: #52bc53;
+    background-color: #FFFFFF;
     width: 100%;
     height: auto;
     display: flex;
@@ -86,7 +84,7 @@ h3 {
 
 #container-label {
     width: 100%;
-    height: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-self: center;
@@ -162,6 +160,10 @@ span {
     font-size: 30px;
 }
 
+div#div-triangle {
+    margin:auto;
+}
+
 #name_resp {
     font-size: 40px;
     color: black;
@@ -182,12 +184,13 @@ input#button-reset {
 
 }
 
-#my-contact {
-    width: 300px;
+input#my-contact {
+    width: 450px;
     height: 50px;
     border: none;
+    font-size: 15px;
     /* background-color: #52bc53; */
-    background-color: blue;
+    background-color: #31C455;
     cursor: pointer;
     margin-top: 40px;
     color: #FFFFFF;
@@ -223,6 +226,10 @@ p.repeat {
 
     #container-top {
         height: 40px;
+    }
+
+    main#container-medium {
+        gap: 1px;
     }
 
     .containers {
@@ -261,7 +268,9 @@ p.repeat {
         width: 95%;
     }
 
-
+    h1#main-title {
+        font-size: 25px;
+    }
 
     #label-name {
         margin-top: 30px;
@@ -288,9 +297,32 @@ p.repeat {
 
     }
 
+    p#text3 {
+        font-size: 20px;
+        width: 100%;
+    }
+
+    div#div-triangle {
+        margin: 0 20px;
+    }
+
     #name_resp {
         font-size: 16px;
     }
+
+    div#local-button {
+        width: 100%;
+    }
+
+    input#my-contact {
+        width: 100%;
+        font-size: 23px;
+    }
+
+    /* #my-contact {
+        width: 100px;
+        h
+    } */
 
     @media screen and (max-width: 350px) {
 
@@ -336,7 +368,7 @@ p.repeat {
         }
 
         p#text3 {
-            font-size: 13px;            
+            font-size: 13px;
             width: 100%;
         }
 
