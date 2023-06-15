@@ -29,7 +29,7 @@ header#container-top {
     outline: none;
 }
 
-a.link-site{
+a.link-site {
     color: rgb(2, 19, 1);
 }
 
@@ -166,7 +166,7 @@ span {
 }
 
 div#div-triangle {
-    margin:auto;
+    margin: auto;
 }
 
 #name_resp {
@@ -219,6 +219,20 @@ input#my-contact {
 
 p.repeat {
     color: red;
+}
+
+footer {
+    color: #31C455;
+    width: 100%;
+    height: 60px;    
+    font-style: italic;
+    font-weight: bold;
+    padding-right: 300px;
+}
+
+p#footer-copy{
+    display: block;
+    text-align: center;
 }
 
 /* RESPONSIVIDADE */
