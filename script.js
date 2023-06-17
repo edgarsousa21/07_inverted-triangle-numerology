@@ -1,4 +1,25 @@
+/*
+ //////////////////////////////////////////////////////////////////////////////////
+        const redSequences0 = ["111", "222", "333", "444", "555", "666", "777", "888", "999"];
+        const redSequences = [[1,1,1],[2,2,2],[3,3,3],[4,4,4],[5,5,5],[6,6,6],[7,7,7],[8,8,8],[9,9,9]];
 
+        let baseNameHTML = "";
+
+        for (let i = 0; i < arrayNameNumber.length; i++) {
+            if (redSequences.includes(arrayNameNumber[i])) {
+                baseNameHTML += `<span style="color: red">${arrayNameNumber[i]}</span>`;
+            } else {
+                baseNameHTML += arrayNameNumber[i];
+            }
+
+            if (i < arrayNameNumber.length - 1) {
+                baseNameHTML += " &nbsp ";
+            }
+        }
+
+        baseName.innerHTML += `<p style="text-align: center">${baseNameHTML}</p>`;
+        //////////////////////////////////////////////////////////////////////////////////
+*/
 const tabelaNumerologia = {
     "b": 2,
     "c": 3,
@@ -128,6 +149,7 @@ const getValues = () => {
         baseName.innerHTML = `<strong><p style="text-align: center">${arrayOriginal.join(" &nbsp ")}</p></strong>`
         baseName.innerHTML += `<p style="text-align: center">${arrayNameNumber.join(" &nbsp ")}</p>`
 
+
         const end = arrayNameNumber.length
         let count = []
         let copy = []
@@ -160,16 +182,18 @@ const getValues = () => {
 
             function numberRed() {
 
-                for (let i = 2; i < count.length; i++) {
-                    sequence = count[i] === count[i - 1] && count[i] === count[i - 2];
+                for (let i = 0; i < count.length - 2; i++) {
+                    sequence = count[i] === count[i + 1] && count[i] === count[i + 2];
                     if (sequence) {
                         neg.push(count[i])
+
                     }
-                }
+                }               
 
                 baseName.innerHTML += `<p class="line-triangle" 
                 style="text-align: center" 
                 >${count.join(" &nbsp ")}</p>`
+
 
                 console.log(sequence)
 
@@ -189,8 +213,8 @@ const getValues = () => {
             negSequence.innerHTML += `<br><span style="color:red">${novaNeg[i]} ${novaNeg[i]} ${novaNeg[i]}</span>
              - ${negativeSequenceTriangleNumberRepeat[novaNeg[i] - 1]}<br>`
             console.log(`${novaNeg[i]} ${novaNeg[i]} ${novaNeg[i]} `)
-        }     
-        
+        }
+
         const localButton = document.querySelector("#local-button")
         const myLink = document.querySelector("#my-link")
         const buttonReset = document.createElement('input')
@@ -212,7 +236,7 @@ const getValues = () => {
 
         buttonReset.addEventListener('click', reset)
 
-     
+
 
     } else {
         alert("Por favor, preencha o seu nome completo.")
